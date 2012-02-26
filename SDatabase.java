@@ -111,7 +111,7 @@ public class SDatabase extends JPanel {
     	
         try
         {
-           FileInputStream fileIn = new FileInputStream("C:/Users/bessie/Documents/MyU! 2012/Database/StudentDatabase.ser");
+           FileInputStream fileIn = new FileInputStream("StudentDatabase.ser");
            ObjectInputStream in = new ObjectInputStream(fileIn);
            cur =  (HashTable<Integer, Student>) in.readObject(); //this casted object has to be checked for type-safety if this entire procedure is to work
            in.close();
