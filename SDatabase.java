@@ -105,6 +105,7 @@ public class SDatabase extends JPanel {
      */
     
 	
+	@SuppressWarnings("unchecked")
 	private void loadData(Object[][] d){
     	//Deserialize the hashtable and it's contents
     	HashTable<Integer, Student> cur;
@@ -128,7 +129,8 @@ public class SDatabase extends JPanel {
        }
        //take data from hash table and put it in a QueueADT*/
         int i = 0;
-        while( i < cur.size()){
+        int size = cur.size();
+        while( i < size){
         	//remove value at current index i and set it to student object a
         	Student a  = cur.remove(i);
         	Q.enqueue(a);  //student object is put into the QueueADT "Q"
@@ -136,30 +138,30 @@ public class SDatabase extends JPanel {
         }
         //Checking the size...
         int tableSize;
-        if(cur.size() > 100){ //if the size of the Hash table is greater than 100
+        if(size > 100){ //if the size of the Hash table is greater than 100
             tableSize = 100;
         }else{ //else if the hash table is smaller than 100 let the table be the size of the hash table
-        	tableSize = cur.size();
+        	tableSize = size;
         }
         //now that all the data from the hash table is in the QueueADT "Q" 
         //let's  start entering the data from the queue into the table
         	int R = 0;
         	while(R < tableSize){
         	//get all the proper info out of the object 
-        	//Student currentStudent = Q.dequeue();
-        		d[R][0] = "David";//currentStudent.getFirstName();
-        		d[R][1] = null;//currentStudent.getMiddleName();
-        		d[R][2] = null;//currentStudent.getFirstName();
-        		d[R][3] = null;//currentStudent.getAge();
-        		d[R][4] = new Date();//currentStudent.getDOB();
-        		d[R][5] = null;//currentStudent.getAddress();
-        		d[R][6] = null;//currentStudent.getSex();
-        		d[R][7] = null;//currentStudent.getClassification();
-        		d[R][8] = 3.3;//currentStudent.getGPA();
-        		d[R][9] = "Black";//currentStudent.getRace();
-        		d[R][10] = null;//currentStudent.getNationality();
-        		d[R][11] = null;//currentStudent.getEthnicity();
-        		R++;
+        	Student currentStudent = Q.dequeue();
+        		d[R][0] = currentStudent.getFirstName();
+        		d[R][1] = currentStudent.getMiddleName();
+        		d[R][2] = currentStudent.getFirstName();
+        		d[R][3] = currentStudent.getAge();
+        		d[R][4] = currentStudent.getDOB();
+        		d[R][5] = currentStudent.getAddress();
+        		d[R][6] = currentStudent.getSex();
+        		d[R][7] = currentStudent.getClassification();
+        		d[R][8] = currentStudent.getGPA();
+        		d[R][9] = currentStudent.getRace();
+        		d[R][10] = currentStudent.getNationality();
+        		d[R][11] = currentStudent.getEthnicity();
+        		R++; 
         	}
         //all the data is now in the table
     }
