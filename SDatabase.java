@@ -45,19 +45,7 @@ public class SDatabase extends JPanel {
 
     	
  
-        //Object[][] data = new Object[100][12];
-        /*		{
-        {"Kathy", "Smith",
-         "Snowboarding", new Integer(5), new Boolean(false)},
-        {"John", "Doe",
-         "Rowing", new Integer(3), new Boolean(true)},
-        {"Sue", "Black",
-         "Knitting", new Integer(2), new Boolean(false)},
-        {"Jane", "White",
-         "Speed reading", new Integer(20), new Boolean(true)},
-        {"Joe", "Brown",
-         "Pool", new Integer(10), new Boolean(false)}
-        };*/
+      
       //deserialize the StudentDatabase by calling loadData() procedure
     	loadData(data);
         
