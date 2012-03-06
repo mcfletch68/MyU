@@ -83,7 +83,7 @@ public class HashTable<Key, Value> implements Map<Key, Value>, Serializable{
     public boolean isEmpty(){
     	return(N == 0);
     }
-    /**Returns a set of keys*/ //replaces keys() on pg 385 of Michael Goodrich's book
+    /**Returns a set of keys*/ //replaces keys() 
     public Set<Key> keySet() {
     	Set<Key> keys = new HashSet<Key>();
     	for(int i = 0; i < capacity; i++)
